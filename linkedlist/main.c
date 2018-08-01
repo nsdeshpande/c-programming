@@ -9,6 +9,7 @@ int main(void){
     int userOption = 1;
     int sll_node_search_index = -2;
     int index = -1;
+	int swap1 = -1, swap2 = -1;
     do{
         userOption = getUserInput();
         switch(userOption){
@@ -36,6 +37,18 @@ int main(void){
                 scanf("%d",&index);
                 head = sll_delete_node(index,head);
             break;
+            case OPTION_FIND_MIDDLE_NODE_1:
+                sll_find_middle_of_sll_1(head);
+            break;
+            case OPTION_FIND_N_ELEMENT_FROM_END:
+                 printf("\nSLL_USER_INPUT: Enter nth index to find from end.");
+                 scanf("%d",&index);
+                 sll_find_n_node_from_end(head,index);
+            break;
+			case OPTION_SWAP_TWO_NODES:
+			    printf("\nSLL_USER_INPUT: Enter two unique nodes to swap");
+				scanf("%d %d",&swap1, &swap2);
+				sll_swap_two_nodes(head,swap1,swap2);
         }
     }while(userOption!=OPTION_EXIT_PROGRAM);
 

@@ -7,8 +7,10 @@ enum options{
     OPTION_PRINT_SLL             = 2,
     OPTION_DELETE_INDEX_NODE_SLL = 3,
     OPTION_SEARCH_NODE_SLL       = 4,
+    OPTION_FIND_MIDDLE_NODE_1    = 5,
+    OPTION_FIND_N_ELEMENT_FROM_END = 6, 
+    OPTION_SWAP_TWO_NODES         = 7,
     OPTION_EXIT_PROGRAM,
-
 };
 
 

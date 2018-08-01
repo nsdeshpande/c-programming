@@ -1,12 +1,15 @@
 #include<stdio.h>
 #include"utils.h"
 
-char* OPTIONS[6] = {"OPTION_APPEND_NODE_SLL\0",
+char* OPTIONS[] = {"OPTION_APPEND_NODE_SLL\0",
             "OPTION_INSERT_NODE_SLL\0",
             "OPTION_PRINT_SLL\0",
             "OPTION_DELETE_INDEX_NODE_SLL\0",
             "OPTION_SEARCH_NODE_SLL\0",
-            "OPTION_EXIT_PROGRAM\0"};
+            "OPTION_FIND_MIDDLE_NODE_1\0",
+            "OPTION_FIND_N_ELEMENT_FROM_END\0",
+            "OPTION_SWAP_TWO_NODES\0", 
+            "OPTION_EXIT_PROGRAM\0",};
 
 int getUserInput(){
     int result = OPTION_EXIT_PROGRAM; 

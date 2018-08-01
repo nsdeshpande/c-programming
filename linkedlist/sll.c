@@ -99,3 +99,84 @@ Node* sll_delete_node(int index, Node * head){
     }
     return resultPtr;
 }
+
+/*If the SLL has even number of nodes, the return would be the one at higher index*/
+void  sll_find_middle_of_sll_1(Node *head){
+    Node *fastPtr = head, *slowPtr = head;
+    if(head != NULL){
+        while((fastPtr!= NULL) && (fastPtr->nextNode != NULL)){
+            slowPtr = slowPtr->nextNode;
+            fastPtr = fastPtr->nextNode->nextNode;
+        }
+        printf("\nSLL_USER_OUTPUT:middle node ptr(0x%x) data(%d)",slowPtr,slowPtr->data);
+    }
+}
+
+void  sll_find_n_node_from_end(Node *head, int n){
+    Node *firstPtr = head;
+    Node *secondPtr = head;
+    if(head!= NULL && n>0){
+        while(n>0){
+            firstPtr = firstPtr->nextNode;
+            n--;
+        }
+        while(firstPtr){
+            secondPtr = secondPtr->nextNode;
+            firstPtr = firstPtr->nextNode;
+        }
+        printf("\nThe Nth node from end is ptr(0x%x) data(%d)",secondPtr,secondPtr->data);
+    }
+}
+
+void  sll_swap_two_nodes(Node *head, int x, int y){
+    
+    Node *temp = head, *x_previous = NULL, *y_previous = NULL, *x_next = NULL, *y_next = NULL;
+    Node *x_node = NULL, *y_node = NULL;
+    int is_x_found = 0, is_y_found = 0;
+    if(head == NULL){
+        SLL_DEBUG_PRINTF("HEAD IS NULL! RETURNING.");
+        return;
+    }else{
+        while( (temp != NULL) && (temp->nextNode != NULL)){
+            if(temp->nextNode->data == x){
+                x_previous = temp;
+                x_next = temp->nextNode->nextNode;
+                is_x_found = 1;
+            }
+            else if(temp->nextNode->data == y){
+                y_previous = temp;
+                y_next = temp->nextNode->nextNode;
+                is_y_found = 1;
+            }
+            temp = temp->nextNode;
+            if(is_x_found && is_y_found){
+                SLL_DEBUG_PRINTF("Both nodes found\n");
+                printf("SLL_DEBUG:x_previous(0x%x) x_node(0x%x) x_next(0x%x)\n",
+                                  x_previous,x_node,x_next);
+                printf("SLL_DEBUG:y_previous(0x%x) y_node(0x%x) y_next(0x%x)\n",
+                                  y_previous,y_node,y_next);
+                break;
+            }
+        }
+        if((is_x_found == 0) || (is_y_found == 0)){
+            SLL_DEBUG_PRINTF("One of the nodes is not found! Returning.\n");
+            printf("is_x_found(%d) is_y_found(%d)",is_x_found,is_y_found);
+            return ;
+        }else if (is_x_found && is_y_found){
+            x_node = x_previous->nextNode;
+            y_node = y_previous->nextNode;
+
+            if(x_next == y_node){
+                x_previous->nextNode = y_node;
+                y_node->nextNode = x_node;
+                x_node->nextNode = y_next;
+            }
+            else{
+                x_previous->nextNode = y_node;
+                y_node->nextNode = x_next;
+                y_previous->nextNode = x_node;
+                x_node->nextNode = y_next;
+            }
+        }
+    }
+}
