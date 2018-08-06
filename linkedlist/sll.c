@@ -290,3 +290,14 @@ Node* sll_delete_sll(Node *head){
     }
     return head;
 }
+
+int   sll_get_length(Node *head){
+    static int length = 0;
+    if(head == NULL){
+        return length;
+    }else{
+        length++;
+        return sll_get_length(head->nextNode);
+    }
+}
+ 

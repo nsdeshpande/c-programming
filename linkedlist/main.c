@@ -9,6 +9,7 @@ int main(void){
     int userOption = 1;
     int sll_node_search_index = -2;
     int index = -1;
+    int length = 0;
 	int swap1 = -1, swap2 = -1;
     do{
         userOption = getUserInput();
@@ -56,7 +57,10 @@ int main(void){
             case OPTION_DELETE_SLL:
                 head = sll_delete_sll(head);
             break;
-            
+            case OPTION_GET_LENGTH:
+                length = sll_get_length(head);
+                printf("\nThe length of the SLL is %d",length);
+            break;  
         }
     }while(userOption!=OPTION_EXIT_PROGRAM);
 

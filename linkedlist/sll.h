@@ -26,5 +26,6 @@ void  sll_find_middle_of_sll_1(Node *head);
 void  sll_find_n_node_from_end(Node *head, int n);
 void  sll_swap_two_nodes(Node *head, int x, int y);
 Node* sll_delete_sll(Node *head);
+int   sll_get_length(Node *head);
 #define SLL_DEBUG_PRINTF(str) printf("SLL_DEBUG_PRINTF: %s",str);
 #endif

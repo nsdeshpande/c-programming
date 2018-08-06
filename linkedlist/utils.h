@@ -12,6 +12,7 @@ enum options{
     OPTION_SWAP_TWO_NODES         = 7,
     OPTION_MERGE_SORTED_LL        = 8,
     OPTION_DELETE_SLL             = 9,
+    OPTION_GET_LENGTH             = 10,
     OPTION_EXIT_PROGRAM,
 };
 
