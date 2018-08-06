@@ -45,10 +45,18 @@ int main(void){
                  scanf("%d",&index);
                  sll_find_n_node_from_end(head,index);
             break;
-			case OPTION_SWAP_TWO_NODES:
-			    printf("\nSLL_USER_INPUT: Enter two unique nodes to swap");
-				scanf("%d %d",&swap1, &swap2);
-				sll_swap_two_nodes(head,swap1,swap2);
+            case OPTION_SWAP_TWO_NODES:
+                printf("\nSLL_USER_INPUT: Enter two unique nodes to swap");
+                scanf("%d %d",&swap1, &swap2);
+                sll_swap_two_nodes(head,swap1,swap2);
+            break;
+            case OPTION_MERGE_SORTED_LL:
+                sll_merge_sorte_ll();
+            break;
+            case OPTION_DELETE_SLL:
+                head = sll_delete_sll(head);
+            break;
+            
         }
     }while(userOption!=OPTION_EXIT_PROGRAM);
 

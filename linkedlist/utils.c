@@ -8,7 +8,9 @@ char* OPTIONS[] = {"OPTION_APPEND_NODE_SLL\0",
             "OPTION_SEARCH_NODE_SLL\0",
             "OPTION_FIND_MIDDLE_NODE_1\0",
             "OPTION_FIND_N_ELEMENT_FROM_END\0",
-            "OPTION_SWAP_TWO_NODES\0", 
+            "OPTION_SWAP_TWO_NODES\0",
+            "OPTION_MERGE_SORTED_LL\0",
+            "OPTION_DELETE_SLL\0", 
             "OPTION_EXIT_PROGRAM\0",};
 
 int getUserInput(){
